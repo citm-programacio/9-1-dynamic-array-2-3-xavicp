@@ -2,10 +2,57 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
+
+void order_numbers(string *cadena, int size) {
+
+    
+    
+    cout << "Cuantos valores quieres en el array?" << endl;
+    cin >> size;
+
+    cadena = new string[size];
+    string *array = NULL;
+
+    array = new string[size];
+
+    for (int i = 0; i < size; i++) {
+
+        cout << "valor numero " << i << endl;
+        cin >> cadena[i];
+    }
+
+        for (int i = 0; i < size; i++) {
+
+            if (*(cadena + i ) > *(cadena+i+1)) {
+
+                *(array + i) = *(cadena + i + 1);
+                *(cadena + i + 1) = *(cadena + i);
+                array[i] = *(cadena + i);
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+
+            cout << *(cadena + i) << endl;
+    }
+    
+        delete[] cadena;
+
+}
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string *cadena = NULL;
+
+    order_numbers(cadena,0);
+
+
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
